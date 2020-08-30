@@ -10,14 +10,16 @@ from stocklist import NasdaqController
 from tqdm import tqdm
 from joblib import Parallel, delayed, parallel_backend
 import multiprocessing
+import lxml
+import pandas as pd
 
 ###########################
 # THIS IS THE MAIN SCRIPT #
 ###########################
 
 # Change variables to your liking then run the script
-MONTH_CUTTOFF = 5
-DAY_CUTTOFF = 3
+MONTH_CUTTOFF = 1
+DAY_CUTTOFF = 1
 STD_CUTTOFF = 9
 
 
@@ -82,15 +84,34 @@ class mainObj:
                     positive_scans.append(stonk)
 
     def main_func(self):
+        print("starting")
+        pd.set_option('display.max_rows',999)
+        testticker = yf.Ticker("AAPL")
+        tickerhist = testticker.history(period="2y")
+
+        tickerhist['50MA'] = tickerhist.Close.rolling(50).mean()
+        tickerhist['200MA'] = tickerhist.Close.rolling(200).mean()
+        print(tickerhist[-256:])
+
+        """
+        print out the whole row in pandas
+        info = sorted([[k,v] for k,v in testticker.info.items()])
+        for k,v in info:
+            print(f'{k} : {v}')
+        """
+
         StocksController = NasdaqController(True)
+        print("stockController True")
         list_of_tickers = StocksController.getList()
+        print("got stock list")
         currentDate = datetime.datetime.strptime(
             date.today().strftime("%Y-%m-%d"), "%Y-%m-%d")
         start_time = time.time()
-
+        print("starting manager")
         manager = multiprocessing.Manager()
+        print("process manager")
         positive_scans = manager.list()
-
+        print("while loop")
         with parallel_backend('loky', n_jobs=multiprocessing.cpu_count()):
             Parallel()(delayed(self.parallel_wrapper)(x, currentDate, positive_scans)
                        for x in tqdm(list_of_tickers))
