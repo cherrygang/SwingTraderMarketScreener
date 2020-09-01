@@ -43,6 +43,10 @@ class mainObj:
         data['50MA'] = data.Close.rolling(50).mean()
         data['200MA'] = data.Close.rolling(200).mean()
         data['RSI'] = self.getRSI(data['Close'],14)
+        data['MACD'] = self.getMACD(data['Close'])
+        data['9dEMA'] = self.getEMA(data['Close'],9)
+        data['20dEMA'] = self.getEMA(data['Close'],20)
+        
         sys.stdout = sys.__stdout__
         return data
 
@@ -110,6 +114,11 @@ class mainObj:
         rsi = 100-100/(1+rs)
         return rsi
 
+    def getMACD(self, data):
+        return self.getEMA(data,12)-self.getEMA(data,26)
+
+    def getEMA(self,data,time_frame):
+        return data.ewm(span=time_frame,adjust=False).mean()
 
     def main_func(self):
         print("starting")
