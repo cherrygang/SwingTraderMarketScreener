@@ -22,9 +22,25 @@ MONTH_CUTTOFF = 12
 DAY_CUTTOFF = 1
 STD_CUTTOFF = 2
 
-RSI=True
-RSIOverBought=70
+#Number of days to look back
+LOOKBACK = 3
+
+#SCREENS = [RSIunder, RSIover, MACD, MAbuy, MAsell]
+SCREENS = [1, 0, 0, 1, 0]
+
+#Turns on screen for RSI 
+RSIunder=True
 RSIOverSold=30
+
+RSIover=False
+RSIOverBought=70
+
+#Turns on screen for MACD (i.e. MACD cross 9d EMA)
+MACD=False
+
+#Turns on screen for Moving Average (9 day EMA cross 20 day EMA). Buy & Sell controls for buy & sell signals
+MAbuy=True
+MAsell=False
 
 
 class mainObj:
@@ -46,38 +62,63 @@ class mainObj:
         data['MACD'] = self.getMACD(data['Close'])
         data['9dEMA'] = self.getEMA(data['Close'],9)
         data['20dEMA'] = self.getEMA(data['Close'],20)
+        data['test1'] = 0
+        data['test2'] = 2
         
         sys.stdout = sys.__stdout__
         return data
 
-    def find_anomalies(self, data):
+    def screener(self, data):
         global STD_CUTTOFF
-        indexs = []
+        flag = 0
         outliers = []
+        addInfo=""
         #printing data for analysis. delete later
-        pd.set_option('display.max_rows',999)
-        print(data)
+        #pd.set_option('display.max_rows',999)
+        #print(data)
 
-        data_std = np.std(data['Volume'])
-        data_mean = np.mean(data['Volume'])
-        anomaly_cut_off = data_std * STD_CUTTOFF
-        upper_limit = data_mean + anomaly_cut_off
+
         data.reset_index(level=0, inplace=True)
-        for i in range(len(data)):
-            temp = data['Volume'].iloc[i]
-            if temp > upper_limit:
-                indexs.append(str(data['Date'].iloc[i])[:-9])
-                outliers.append(temp)
-        d = {'Dates': indexs, 'Volume': outliers}
+
+
+        #RSI analysis
+        if (RSIover or RSIunder):
+
+            for i in data['RSI'].iloc[-3:]:
+                if RSIunder:
+                    if i < 30:
+                        #[:-9] at the end is to remove lines & spaces from 
+                        addInfo = addInfo + "\nRSI: "+ str(round(i)) +" Over Sold"
+                        flag= 1
+                if RSIover:
+                    if i > 70:
+                        addInfo = addInfo + "\nRSI: "+ str(round(i)) +" Over Bought"
+                        flag= 1
+
+        #MACD analysis
+        if MACD:
+            if self.lineCross(data['MACD'],data['9dEMA'],3):
+                addInfo = addInfo + "\nMACD cross " 
+                flag +=1
+                
+        #MA analysis
+
+        if MAbuy:
+            if self.lineCross(data['9dEMA'],data['20dEMA'],3):
+                addInfo = addInfo + "\n9 day EMA & 20 day EMA Buy Signal"
+                flag +=1
+        if MAsell:
+            if self.lineCross(data['20dEMA'],data['9dEMA'],3):
+                addInfo = addInfo + "\n9 day EMA & 20 day EMA Sell Signal"
+                flag +=1
+        d = {'flag': flag, 'Volume': outliers, 'Info': addInfo}
         return d
 
     def customPrint(self, d, tick):
         print("\n\n\n*******  " + tick.upper() + "  *******")
         print("Ticker is: "+tick.upper())
-        for i in range(len(d['Dates'])):
-            str1 = str(d['Dates'][i])
-            str2 = str(d['Volume'][i])
-            print(str1 + " - " + str2)
+
+        print("\n "+d['Info'])
         print("*********************\n\n\n")
 
     def days_between(self, d1, d2):
@@ -88,18 +129,13 @@ class mainObj:
     def parallel_wrapper(self, x, currentDate, positive_scans):
         
         global DAY_CUTTOFF
-        d = (self.find_anomalies(self.getData(x)))
+        d = (self.screener(self.getData(x)))
+        if d['flag'] == 2 :
+            self.customPrint(d,x)
 
-        if d['Dates']:
-            for i in range(len(d['Dates'])):
-                if self.days_between(str(currentDate)[:-9], str(d['Dates'][i])) <= DAY_CUTTOFF:
-                    self.customPrint(d, x)
-                    stonk = dict()
-                    stonk['Ticker'] = x
-                    stonk['TargetDate'] = d['Dates'][0]
-                    stonk['TargetVolume'] = str(
-                        '{:,.2f}'.format(d['Volume'][0]))[:-3]
-                    positive_scans.append(stonk)
+            stonk = dict()
+            stonk['Ticker'] = x
+            positive_scans.append(stonk)
 
     def getRSI(self, data, time_window):
         diff = data.diff(1).dropna()
@@ -120,36 +156,25 @@ class mainObj:
     def getEMA(self,data,time_frame):
         return data.ewm(span=time_frame,adjust=False).mean()
 
+    def lineCross(self, line1, line2, lookback):
+        #if line1 is initially lower than line 2 & cross then return True
+        try:
+            if (line1.iloc[-lookback]-line2.iloc[-lookback]<0):
+                if (line1.iloc[-1]-line2.iloc[-1]>0):
+                    return True
+                return False
+        except IndexError:
+            return False
+
+
     def main_func(self):
-        print("starting")
-        """
-        pd.set_option('display.max_rows',999)
-        testticker = yf.Ticker("AAPL")
-        tickerhist = testticker.history(period="2y")
-
-        tickerhist['50MA'] = tickerhist.Close.rolling(50).mean()
-        tickerhist['200MA'] = tickerhist.Close.rolling(200).mean()
-        print(tickerhist[-256:])
-
-        
-        print out the whole row in pandas
-        info = sorted([[k,v] for k,v in testticker.info.items()])
-        for k,v in info:
-            print(f'{k} : {v}')
-        """
-
         StocksController = NasdaqController(True)
-        print("stockController True")
         list_of_tickers = StocksController.getList()
-        print("got stock list")
         currentDate = datetime.datetime.strptime(
             date.today().strftime("%Y-%m-%d"), "%Y-%m-%d")
         start_time = time.time()
-        print("starting manager")
         manager = multiprocessing.Manager()
-        print("process manager")
         positive_scans = manager.list()
-        print("while loop")
         with parallel_backend('loky', n_jobs=multiprocessing.cpu_count()):
             Parallel()(delayed(self.parallel_wrapper)(x, currentDate, positive_scans)
                        for x in tqdm(list_of_tickers))
