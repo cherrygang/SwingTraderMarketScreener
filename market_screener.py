@@ -25,10 +25,15 @@ STD_CUTTOFF = 2
 #Number of days to look back
 LOOKBACK = 3
 
-#SCREENS = [RSIunder, RSIover, MACD, MAbuy, MAsell]
+#RSIunder = RSI under RSIOverSold number
+#RSIover = RSI over RSIOverBought number
+#MACD = MACD breaking out over 9 day EMA
+#MAbuy = 9 day EMA breaking out over 20 day EMA
+#MAsell = 9 day EMA crossing under 20 day EMA
+#SCREENS = [RSIunder, RSIover, MACD, MAbuy, MAsell] (1 = turned on, 0 = turned off)
 SCREENS = [1, 0, 0, 1, 0]
 
-#Turns on screen for RSI 
+#RSI Info
 RSIunder=True
 RSIOverSold=30
 
@@ -90,11 +95,12 @@ class mainObj:
                         #[:-9] at the end is to remove lines & spaces from 
                         addInfo = addInfo + "\nRSI: "+ str(round(i)) +" Over Sold"
                         flag= 1
+                        break
                 if RSIover:
                     if i > 70:
                         addInfo = addInfo + "\nRSI: "+ str(round(i)) +" Over Bought"
                         flag= 1
-
+                        break
         #MACD analysis
         if MACD:
             if self.lineCross(data['MACD'],data['9dEMA'],3):
