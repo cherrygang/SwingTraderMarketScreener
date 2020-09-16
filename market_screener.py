@@ -25,13 +25,6 @@ STD_CUTTOFF = 2
 #Number of days to look back
 LOOKBACK = 3
 
-#RSIunder = RSI under RSIOverSold number
-#RSIover = RSI over RSIOverBought number
-#MACD = MACD breaking out over 9 day EMA
-#MAbuy = 9 day EMA breaking out over 20 day EMA
-#MAsell = 9 day EMA crossing under 20 day EMA
-#SCREENS = [RSIunder, RSIover, MACD, MAbuy, MAsell] (1 = turned on, 0 = turned off)
-SCREENS = [1, 0, 0, 1, 0]
 
 #RSI Info
 RSIunder=True
@@ -47,6 +40,8 @@ MACD=False
 MAbuy=True
 MAsell=False
 
+#List of all screens
+SCREENS = [RSIunder, RSIover, MACD, MAbuy, MAsell]
 
 class mainObj:
 
@@ -136,7 +131,7 @@ class mainObj:
         
         global DAY_CUTTOFF
         d = (self.screener(self.getData(x)))
-        if d['flag'] == 2 :
+        if d['flag'] >= sum(SCREENS) :
             self.customPrint(d,x)
 
             stonk = dict()
