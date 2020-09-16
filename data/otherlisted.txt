@@ -34,7 +34,9 @@ ACI|Albertsons Companies, Inc. Class A Common Stock|N|ACI|N|100|N|ACI
 ACIO|ETF Series Solutions Aptus Collared Income Opportunity ETF|Z|ACIO|Y|100|N|ACIO
 ACM|AECOM Common Stock|N|ACM|N|100|N|ACM
 ACN|Accenture plc Class A Ordinary Shares (Ireland)|N|ACN|N|100|N|ACN
+ACND|Ascendant Digital Acquisition Corp. Class A Ordinary Shares|N|ACND|N|100|N|ACND
 ACND.U|Ascendant Digital Acquisition Corp. Units, each consisting of one Class A ordinary share and one-half of one redeemable warrant|N|ACND.U|N|100|N|ACND=
+ACND.W|Ascendant Digital Acquisition Corp. Warrants, each whole warrant exercisable for one Class A ordinary share at an exercise price of $11.50 per share|N|ACND.WS|N|100|N|ACND+
 ACP|Aberdeen Income Credit Strategies Fund Common Shares|N|ACP|N|100|N|ACP
 ACRE|Ares Commercial Real Estate Corporation Common Stock|N|ACRE|N|100|N|ACRE
 ACSG|Xtrackers MSCI ACWI ex USA ESG Leaders Equity ETF|P|ACSG|Y|100|N|ACSG
@@ -632,6 +634,7 @@ BSIG|BrightSphere Investment Group Inc. Common Stock|N|BSIG|N|100|N|BSIG
 BSL|Blackstone GSO Senior Floating Rate Term Fund Common Shares of Beneficial Interest|N|BSL|N|100|N|BSL
 BSM|Black Stone Minerals, L.P. Common units representing limited partner interests|N|BSM|N|100|N|BSM
 BSMX|Banco Santander Mexico, S.A., Institucion de Banca Multiple, Grupo Financiero Santander Mexico|N|BSMX|N|100|N|BSMX
+BSN.U|Broadstone Acquisition Corp. Units, each consisting of one Class A ordinary share and one-half of one redeemable warrant|N|BSN.U|N|100|N|BSN=
 BST|BlackRock Science and Technology Trust Common Shares of Beneficial Interest|N|BST|N|100|N|BST
 BSTZ|BlackRock Science and Technology Trust II Common Shares of Beneficial Interest|N|BSTZ|N|100|N|BSTZ
 BSV|Vanguard Short-Term Bond ETF|P|BSV|Y|100|N|BSV
@@ -1466,6 +1469,7 @@ ENJ|Entergy New Orleans, LLC First Mortgage Bonds, 5.0% Series due December 1, 2
 ENLC|EnLink Midstream, LLC Common Units representing Limited Partner Interests|N|ENLC|N|100|N|ENLC
 ENO|Entergy New Orleans, LLC First Mortgage Bonds, 5.50% Series due April 1, 2066|N|ENO|N|100|N|ENO
 ENOR|iShares Inc iShares MSCI Norway ETF|Z|ENOR|Y|100|N|ENOR
+ENPC.U|Executive Network Partnering Corporation Units, each consisting of one share of Class A common stock, and one-quarter of one redeemable warrant|N|ENPC.U|N|100|N|ENPC=
 ENR|Energizer Holdings, Inc. Common Stock|N|ENR|N|100|N|ENR
 ENR$A|Energizer Holdings, Inc. 7.50% Series A Mandatory Convertible Preferred Stock|N|ENRpA|N|100|N|ENR-A
 ENS|EnerSys Common Stock|N|ENS|N|100|N|ENS
@@ -1502,6 +1506,7 @@ EPV|ProShares UltraShort FTSE Europe ETF|P|EPV|Y|100|N|EPV
 EQAL|Invesco Russell 1000 Equal Weight ETF|P|EQAL|Y|100|N|EQAL
 EQC|Equity Commonwealth Common Shares of Beneficial Interest|N|EQC|N|100|N|EQC
 EQC$D|Equity Commonwealth 6.50% Pfd Conv Shs Ser D|N|EQCpD|N|100|N|EQC-D
+EQD.U|Equity Distribution Acquisition Corp. Units|N|EQD.U|N|100|N|EQD=
 EQH|Equitable Holdings, Inc. Common Stock|N|EQH|N|100|N|EQH
 EQH$A|Equitable Holdings, Inc. Depositary Shares|N|EQHpA|N|100|N|EQH-A
 EQL|ALPS Equal Sector Weight ETF|P|EQL|Y|100|N|EQL
@@ -1778,8 +1783,8 @@ FLKR|Franklin FTSE South Korea ETF|P|FLKR|Y|100|N|FLKR
 FLLA|Franklin FTSE Latin America ETF|P|FLLA|Y|100|N|FLLA
 FLLV|Franklin Liberty U.S. Low Volatility ETF|P|FLLV|Y|100|N|FLLV
 FLM|First Trust Global Engineering and Construction ETF|P|FLM|Y|100|N|FLM
-FLMB|Franklin Templeton ETF Trust Franklin Liberty Municipal Bond ETF|P|FLMB|Y|100|N|FLMB
-FLMI|Franklin Templeton ETF Trust Franklin Liberty Intermediate Municipal Opportunities ETF|P|FLMI|Y|100|N|FLMI
+FLMB|Franklin Templeton ETF Trust Franklin Liberty Federal Tax-Free Bond ETF|P|FLMB|Y|100|N|FLMB
+FLMI|Franklin Templeton ETF Trust Franklin Liberty Federal Intermediate Tax-Free Bond Opportunities ETF|P|FLMI|Y|100|N|FLMI
 FLMX|Franklin FTSE Mexico ETF|P|FLMX|Y|100|N|FLMX
 FLNG|FLEX LNG Ltd. Ordinary Shares|N|FLNG|N|100|N|FLNG
 FLO|Flowers Foods, Inc. Common Stock|N|FLO|N|100|N|FLO
@@ -1961,7 +1966,7 @@ GBIL|Goldman Sachs Access Treasury 0-1 Year ETF|P|GBIL|Y|100|N|GBIL
 GBL|Gamco Investors, Inc. Common Stock|N|GBL|N|100|N|GBL
 GBLO|Global Beta Low Beta ETF|P|GBLO|Y|100|N|GBLO
 GBR|New Concept Energy, Inc Common Stock|A|GBR|N|100|N|GBR
-GBUG|iPath Gold ETN|P|GBUG|Y|100|N|GBUG
+GBUG|Barclays Bank PLC Pacer iPath Gold ETNs|P|GBUG|Y|100|N|GBUG
 GBUY|Goldman Sachs New Age Consumer ETF|P|GBUY|Y|100|N|GBUY
 GBX|Greenbrier Companies, Inc. (The) Common Stock|N|GBX|N|100|N|GBX
 GCC|WisdomTree Continuous Commodity Index Fund|P|GCC|Y|100|N|GCC
@@ -2748,9 +2753,9 @@ JOYY|Infusive US Trust ETF Infusive Compounding Global Equities ETF|P|JOYY|Y|100
 JP|Jupai Holdings Limited American Depositary Shares, each representing six ordinary shares|N|JP|N|100|N|JP
 JPC|Nuveen Preferred & Income Opportunities Fund|N|JPC|N|100|N|JPC
 JPEM|JPMorgan Diversified Return Emerging Markets Equity ETF|P|JPEM|Y|100|N|JPEM
-JPGB|JPMorgan Global Bond Opportunities ETF|Z|JPGB|Y|100|N|JPGB
 JPHY|JPMorgan Research Enhanced High Yield ETF|Z|JPHY|Y|100|N|JPHY
 JPI|Nuveen Preferred and Income Term Fund Common Shares of Beneficial Interest|N|JPI|N|100|N|JPI
+JPIB|J.P. Morgan Exchange-Traded Fund Trust JPMorgan International Bond Opportunities ETF|Z|JPIB|Y|100|N|JPIB
 JPIN|JPMorgan Diversified Return International Equity ETF|P|JPIN|Y|100|N|JPIN
 JPM|JP Morgan Chase & Co. Common Stock|N|JPM|N|100|N|JPM
 JPM$C|J P Morgan Chase & Co Depositary Shares, each representing a 1/400th interest in a share of 6.00% Non-Cumulative  Preferred Stock, Series EE|N|JPMpC|N|100|N|JPM-C
@@ -2923,6 +2928,7 @@ LDUR|PIMCO Enhanced Low Duration Active Exchange-Traded Fund|P|LDUR|Y|100|N|LDUR
 LEA|Lear Corporation Common Stock|N|LEA|N|100|N|LEA
 LEAD|Realty Shares DIVCON Leaders Dividend ETF|Z|LEAD|Y|100|N|LEAD
 LEAF|Leaf Group Ltd. Common Stock|N|LEAF|N|100|N|LEAF
+LEAP.U|Ribbit LEAP, Ltd. Units, each consisting of one Class A Ordinary Share, and one fifth of one Warrant to acquire one Class A Ordinary Share|N|LEAP.U|N|100|N|LEAP=
 LEE|Lee Enterprises, Incorporated Common Stock|N|LEE|N|100|N|LEE
 LEG|Leggett & Platt, Incorporated Common Stock|N|LEG|N|100|N|LEG
 LEJU|Leju Holdings Limited American Depositary Shares, each representing one Ordinary share|N|LEJU|N|100|N|LEJU
@@ -2988,6 +2994,7 @@ LRNZ|TrueShares Technology, AI & Deep Learning ETF|P|LRNZ|Y|100|N|LRNZ
 LSAF|LeaderShares AlphaFactor US Core Equity ETF|P|LSAF|Y|100|N|LSAF
 LSI|Life Storage, Inc. Common Stock|N|LSI|N|100|N|LSI
 LSLT|Salt Low truBeta US Market ETF|Z|LSLT|Y|100|N|LSLT
+LSPD|Lightspeed POS Inc. Subordinate Voting Shares|N|LSPD|N|100|N|LSPD
 LSST|Natixis ETF Trust Natixis Loomis Sayles Short Duration Income ETF|P|LSST|Y|100|N|LSST
 LTC|LTC Properties, Inc. Common Stock|N|LTC|N|100|N|LTC
 LTHM|Livent Corporation Common Stock|N|LTHM|N|100|N|LTHM
@@ -3385,8 +3392,6 @@ NM|Navios Maritime Holdings Inc. Common Stock|N|NM|N|100|N|NM
 NM$G|Navios Maritime Holdings Inc. Sponsored ADR Representing 1/100th Perpetual Preferred Series G (Marshall Islands)|N|NMpG|N|100|N|NM-G
 NM$H|Navios Maritime Holdings Inc. Sponsored ADR Representing 1/100th Perp. Preferred Series H%|N|NMpH|N|100|N|NM-H
 NMCO|Nuveen Municipal Credit Opportunities Fund Common Shares|N|NMCO|N|100|N|NMCO
-NMFC|New Mountain Finance Corporation Common Stock|N|NMFC|N|100|N|NMFC
-NMFX|New Mountain Finance Corporation 5.75% Notes due 2023|N|NMFX|N|100|N|NMFX
 NMI|Nuveen Municipal Income Fund, Inc. Common Stock|N|NMI|N|100|N|NMI
 NMK$B|Niagara Mohawk Holdings, Inc. Preferred Stock|N|NMKpB|N|10|N|NMK-B
 NMK$C|Niagara Mohawk Holdings, Inc. Preferred Stock|N|NMKpC|N|10|N|NMK-C
@@ -3893,7 +3898,8 @@ PSQ|ProShares Short QQQ|P|PSQ|Y|100|N|PSQ
 PSR|Invesco Active U.S. Real Estate Fund|P|PSR|Y|100|N|PSR
 PST|ProShares UltraShort Lehman 7-10 Year Treasury|P|PST|Y|100|N|PST
 PSTG|Pure Storage, Inc. Class A Common Stock|N|PSTG|N|100|N|PSTG
-PSTH.U|Pershing Square Tontine Holdings, Ltd. Units, each consisting of one share of Class A Common Stock and one-ninth of one Warrant to purchase one share of Class A Common Stock|N|PSTH.U|N|100|N|PSTH=
+PSTH|Pershing Square Tontine Holdings, Ltd. Class A Common Stock|N|PSTH|N|100|N|PSTH
+PSTH.W|Pershing Square Tontine Holdings, Ltd. Warrants, exercisable for one share of Class A Common Stock for $23.00 per share|N|PSTH.WS|N|100|N|PSTH+
 PSTL|Postal Realty Trust, Inc. Class A Common Stock|N|PSTL|N|100|N|PSTL
 PSV|Hermitage Offshore Services Ltd. Ordinary Shares (Bermuda)|N|PSV|N|100|N|PSV
 PSX|Phillips 66 Common Stock|N|PSX|N|100|N|PSX
@@ -4216,6 +4222,7 @@ SBBA|Scorpio Tankers Inc. 7.00% Senior Notes due 2025|N|SBBA|N|100|N|SBBA
 SBE|Switchback Energy Acquisition Corporation Class A Common Stock|N|SBE|N|100|N|SBE
 SBE.U|Switchback Energy Acquisition Corporation Units|N|SBE.U|N|100|N|SBE=
 SBE.W|Switchback Energy Acquisition Corporation Warrant|N|SBE.WS|N|100|N|SBE+
+SBG.U|Sandbridge Acquisition Corporation Units|N|SBG.U|N|100|N|SBG=
 SBH|Sally Beauty Holdings, Inc. (Name to be changed from Sally Holdings, Inc.) Common Stock|N|SBH|N|100|N|SBH
 SBI|Western Asset Intermediate Muni Fund Inc Common Stock|N|SBI|N|100|N|SBI
 SBIO|ALPS Medical Breakthroughs ETF|P|SBIO|Y|100|N|SBIO
@@ -4421,8 +4428,10 @@ SNDR|Schneider National, Inc. Common Stock|N|SNDR|N|100|N|SNDR
 SNE|Sony Corporation Common Stock|N|SNE|N|100|N|SNE
 SNMP|Sanchez Midstream Partners LP Common Stock|A|SNMP|N|100|N|SNMP
 SNN|Smith & Nephew SNATS, Inc. Common Stock|N|SNN|N|100|N|SNN
+SNOW|Snowflake Inc. Class A Common Stock|N|SNOW|N|100|N|SNOW
 SNP|China Petroleum & Chemical Corporation Common Stock|N|SNP|N|100|N|SNP
 SNPE|Xtrackers S&P 500 ESG ETF|P|SNPE|Y|100|N|SNPE
+SNPR.U|Tortoise Acquisition Corp. II Units|N|SNPR.U|N|100|N|SNPR=
 SNR|New Senior Investment Group Inc. Common Stock|N|SNR|N|100|N|SNR
 SNV|Synovus Financial Corp. Common Stock|N|SNV|N|100|N|SNV
 SNV$D|Synovus Financial Corp. Fixed-to-Floating Rate Non-Cumulative Perpetual Preferred Stock, Series D Liquation Preference $25.00 per Share|N|SNVpD|N|100|N|SNV-D
@@ -5394,4 +5403,4 @@ ZUO|Zuora, Inc. Class A Common Stock|N|ZUO|N|100|N|ZUO
 ZVV|NYSE ARCA test stock|P|ZVV|N|100|Y|ZVV
 ZXIET|IEX Test Company Test Symbol Three for IEX|V|ZXIET|N|100|Y|ZXIET
 ZYME|Zymeworks Inc. Common Shares|N|ZYME|N|100|N|ZYME
-File Creation Time: 0910202010:01||||||
+File Creation Time: 0916202011:02||||||
