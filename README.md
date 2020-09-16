@@ -9,7 +9,7 @@ By default the screener looks towards if the RSI has been below 30 for the last 
 - Open the script in your IDE and install all required dependancies by typing pip install -r requirements.txt into the IDE's terminal
 - Run the market_screener.py and it will print out results into the terminal
 
-
+![image](https://user-images.githubusercontent.com/6879616/93362621-3296cf00-f814-11ea-845e-4524e08e758a.png)
 
 
 
